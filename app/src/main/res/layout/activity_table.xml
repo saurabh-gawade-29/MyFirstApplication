@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="*">
+
+    <TableRow>
+        <TextView android:text="Row 1, Col 1" />
+        <TextView android:text="Row 1, Col 2" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Row 2, Col 1" />
+        <TextView android:text="Row 2, Col 2" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:id="@+id/next_layout_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next Layout" />
+    </TableRow>
+</TableLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:rowCount="2"
+    android:columnCount="2"
+    android:padding="16dp">
+
+    <Button
+        android:text="Grid 1"
+        android:layout_row="0"
+        android:layout_column="0"/>
+    <Button
+        android:text="Grid 2"
+        android:layout_row="0"
+        android:layout_column="1"/>
+    <Button
+        android:text="Grid 3"
+        android:layout_row="1"
+        android:layout_column="0"/>
+    <Button
+        android:id="@+id/next_layout_btn"
+        android:text="Next Layout"
+        android:layout_row="1"
+        android:layout_column="1"/>
+</GridLayout>

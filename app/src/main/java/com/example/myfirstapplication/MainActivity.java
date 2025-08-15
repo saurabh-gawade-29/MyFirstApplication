@@ -1,25 +1,42 @@
 package com.example.myfirstapplication;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.view.View;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    private int layoutIndex = 0;
+    private int[] layouts = {
+            R.layout.activity_linear,
+            R.layout.activity_relative,
+            R.layout.activity_constraint,
+            R.layout.activity_frame,
+            R.layout.activity_table,
+            R.layout.activity_grid
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_linear);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.linear_layout), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        setLayout(layoutIndex);
+    }
+
+    private void setLayout(int index) {
+        setContentView(layouts[index]);
+
+        // Example: Add a button to switch to next layout, if available in each layout
+        // Make sure each layout file includes a Button with the ID: next_layout_btn
+        Button nextBtn = findViewById(R.id.next_layout_btn);
+        if (nextBtn != null) {
+            nextBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    layoutIndex = (layoutIndex + 1) % layouts.length;
+                    setLayout(layoutIndex);
+                }
+            });
+        }
     }
 }
