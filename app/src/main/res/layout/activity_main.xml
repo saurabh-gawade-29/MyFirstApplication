@@ -1,21 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello Yash and Rohan and saurabh"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- TextField (Single-line EditText) -->
+        <EditText
+            android:id="@+id/editTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Text Field"/>
+
+        <!-- TextArea (Multi-line EditText) -->
+        <EditText
+            android:id="@+id/editTextArea"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Text Area"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:lines="4"/>
+
+        <!-- RadioGroup (Radio Buttons) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Gender"/>
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"/>
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"/>
+        </RadioGroup>
+
+        <!-- Select Input (Spinner) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Country"/>
+        <Spinner
+            android:id="@+id/spinnerCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Checkbox -->
+        <CheckBox
+            android:id="@+id/checkSubscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscribe to newsletter"/>
+
+        <!-- ImageButton -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Press Image Button"/>
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_camera"
+            android:contentDescription="Camera"/>
+
+        <!-- Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"/>
+    </LinearLayout>
+</ScrollView>
