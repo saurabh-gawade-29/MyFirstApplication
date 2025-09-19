@@ -11,15 +11,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApplication">
+
+        <!-- Launcher Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Other Activities (only internal, not exported) -->
+        <activity android:name=".EditTextActivity" android:exported="false" />
+        <activity android:name=".ButtonActivity" android:exported="false" />
+        <activity android:name=".ImageButtonActivity" android:exported="false" />
+        <activity android:name=".ToggleButtonActivity" android:exported="false" />
+        <activity android:name=".RadioButtonActivity" android:exported="false" />
+        <activity android:name=".CheckBoxActivity" android:exported="false" />
+        <activity android:name=".ProgressBarActivity" android:exported="false" />
+        <activity android:name=".ListViewActivity" android:exported="false" />
+        <activity android:name=".GridViewActivity" android:exported="false" />
+        <activity android:name=".ImageViewActivity" android:exported="false" />
+        <activity android:name=".ScrollViewActivity" android:exported="false" />
+        <activity android:name=".CustomToastActivity" android:exported="false" />
+        <activity android:name=".TimePickerActivity" android:exported="false" />
+        <activity android:name=".DatePickerActivity" android:exported="false" />
+
     </application>
 
 </manifest>

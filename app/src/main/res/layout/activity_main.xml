@@ -1,21 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello Yash and Rohan and saurabh"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224" />
+        android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UI Examples - Menu"
+            android:textSize="22sp"
+            android:padding="8dp" />
+
+        <GridLayout
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="8"
+            android:useDefaultMargins="true">
+
+            <!-- Buttons will be referenced by ids in MainActivity -->
+            <Button
+                android:id="@+id/btnTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <Button
+                android:id="@+id/btnEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EditText" />
+
+            <Button
+                android:id="@+id/btnButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/btnImageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ImageButton" />
+
+            <Button
+                android:id="@+id/btnToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton" />
+
+            <Button
+                android:id="@+id/btnRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+
+            <Button
+                android:id="@+id/btnCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <Button
+                android:id="@+id/btnProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ProgressBar" />
+
+            <Button
+                android:id="@+id/btnList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ListView" />
+
+            <Button
+                android:id="@+id/btnGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GridView" />
+
+            <Button
+                android:id="@+id/btnImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ImageView" />
+
+            <Button
+                android:id="@+id/btnScroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ScrollView" />
+
+            <Button
+                android:id="@+id/btnCustomToast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Custom Toast" />
+
+            <Button
+                android:id="@+id/btnTimePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TimePicker" />
+
+            <Button
+                android:id="@+id/btnDatePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DatePicker" />
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>
