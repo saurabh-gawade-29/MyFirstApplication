@@ -1,21 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello Yash and Rohan and saurabh"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Header -->
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/student_registration_form"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="8dp" />
+
+        <!-- Profile image + edit button (ImageView + ImageButton) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                android:contentDescription="@string/profile_image"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:padding="4dp" />
+
+            <ImageButton
+                android:id="@+id/ibEditPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_camera"
+                android:contentDescription="@string/edit_photo"
+                android:background="@null"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Text inputs (EditText) -->
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full name"
+            android:inputType="textPersonName"
+            android:maxLength="50" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address"
+            android:inputType="textMultiLine"
+            android:lines="3" />
+
+        <!-- RadioGroup + RadioButtons (Gender) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:paddingTop="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/rbFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+
+            <RadioButton
+                android:id="@+id/rbOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other" />
+        </RadioGroup>
+
+        <!-- CheckBoxes (Interests) -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Interests" android:paddingTop="8dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <CheckBox android:id="@+id/cbSports" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sports"/>
+            <CheckBox android:id="@+id/cbMusic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Music"/>
+            <CheckBox android:id="@+id/cbReading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Reading"/>
+        </LinearLayout>
+
+        <!-- ToggleButton (newsletter subscription) -->
+        <ToggleButton
+            android:id="@+id/tgNewsletter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="Subscribed"
+            android:textOff="Subscribe"
+            android:paddingTop="8dp"/>
+
+        <!-- DatePicker and TimePicker -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Date of Birth" android:paddingTop="8dp"/>
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Preferred contact time" android:paddingTop="8dp"/>
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner"
+             />
+
+        <!-- ListView (courses) -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select Course (ListView)" android:paddingTop="8dp"/>
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:divider="#9E9E9E"
+            android:dividerHeight="1dp"
+            android:choiceMode="singleChoice" />
+
+        <!-- GridView (days / compact choices) -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Available Days (GridView)" android:paddingTop="8dp"/>
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:numColumns="3"
+            android:horizontalSpacing="8dp"
+            android:verticalSpacing="8dp"
+            android:gravity="center" />
+
+        <!-- ProgressBar -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Form completion" android:paddingTop="8dp"/>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="0"
+            android:paddingTop="4dp"/>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="12dp">
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset" />
+        </LinearLayout>
+
+        <!-- Hidden layout used as "custom toast" (keeps single-XML requirement) -->
+        <LinearLayout
+            android:id="@+id/custom_toast"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@android:drawable/toast_frame">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_dialog_info"/>
+
+            <TextView
+                android:id="@+id/toastText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:text="Toast" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
